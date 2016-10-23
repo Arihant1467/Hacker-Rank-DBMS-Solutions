@@ -1,4 +1,5 @@
-Type Of triangle
+Q.1 Type Of triangle
+
 SELECT CASE             
             WHEN A + B > C AND B + C > A AND A + C > B THEN
                 CASE 
@@ -9,3 +10,14 @@ SELECT CASE
             ELSE 'Not Triangle'
         END
 FROM TRIANGLES;
+// first checking the property of triangle and then evaluting type of triangle rule
+
+Q.2 The PADS
+
+SELECT CONCAT(NAME,'(',LEFT(OCCUPATION,1),')') AS N FROM OCCUPATIONS ORDER BY N;
+SELECT CONCAT('There are total ',COUNT(OCCUPATION),' ',LCASE(OCCUPATION),'s.') FROM OCCUPATIONS GROUP BY OCCUPATION ORDER BY COUNT(OCCUPATION),LCASE(OCCUPATION);
+// ';' semi colon allows sequential execution of statements
+//CONCAT function function invoked to conact Strings.
+// LEFT(OCCUPATION,1) to get first char from left of the coloumn value occupation
+// multiple order clause are seperated by ',' comma.First Order by count,then if we have two same counts
+// ordering by occupation
