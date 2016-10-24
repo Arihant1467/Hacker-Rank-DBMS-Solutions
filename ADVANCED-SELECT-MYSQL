@@ -21,3 +21,8 @@ SELECT CONCAT('There are total ',COUNT(OCCUPATION),' ',LCASE(OCCUPATION),'s.') F
 // LEFT(OCCUPATION,1) to get first char from left of the coloumn value occupation
 // multiple order clause are seperated by ',' comma.First Order by count,then if we have two same counts
 // ordering by occupation
+
+Q. New Companies
+SELECT c.Company_Code, c.founder, count(Distinct e.Lead_Manager_Code), count(distinct e.Senior_Manager_Code),
+count(distinct e.Manager_Code),count(distinct e.employee_Code) FROM Company c JOIN Employee e ON 
+c.Company_Code = e.Company_Code GROUP BY c.Company_Code, c.Founder ORDER BY c.COMpany_Code;
